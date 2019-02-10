@@ -1,0 +1,6 @@
+{
+  "appId": "com.testthing.myapp",
+  "appName": "MyApp",
+  "bundledWebRuntime": false,
+  "webDir": "dist"
+}

@@ -1,0 +1,33 @@
+PODS:
+  - AWSCognitoAuth (2.9.0):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - Capacitor (1.0.0-beta.16):
+    - CapacitorCordova (= 1.0.0-beta.16)
+  - CapacitorCordova (1.0.0-beta.16)
+
+DEPENDENCIES:
+  - AWSCognitoAuth (~> 2.9)
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSCognitoAuth
+    - AWSCognitoIdentityProviderASF
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+
+SPEC CHECKSUMS:
+  AWSCognitoAuth: aac4d40faa6095a0e2abeb5c52e668402557c7a8
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  Capacitor: dab3627ba6b80334e844e8ffb3373a76504aa5b6
+  CapacitorCordova: 245319f2ac2c40fb4fdc29ae39f1fc6f33441bec
+
+PODFILE CHECKSUM: cc4cfa86609779b3ed0d3df5b7a91d45fd28741d
+
+COCOAPODS: 1.5.3
