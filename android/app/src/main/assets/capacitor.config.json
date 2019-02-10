@@ -1,6 +1,6 @@
 {
-  "appId": "com.workgrid.workgridnativeclient",
-  "appName": "Wkgrid",
+  "appId": "com.testthing.myapp",
+  "appName": "MyApp",
   "bundledWebRuntime": false,
   "webDir": "dist"
 }

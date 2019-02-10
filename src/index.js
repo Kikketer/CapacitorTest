@@ -5,17 +5,18 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Plugins } from '@capacitor/core'
-const { CognitoPlugin } = Plugins
+
+const {CognitoPlugin} = Plugins
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       status: 'loading...'
     }
   }
 
-  async componentDidMount() {
+  async componentDidMount () {
     await CognitoPlugin.config({
       appClientId: process.env.APP_CLIENT_ID,
       signInRedirectUri: process.env.SIGN_IN_URL,
@@ -25,14 +26,10 @@ class App extends Component {
     this.setState({ status: `Configured with ${process.env.SIGN_IN_URL}` })
   }
 
-  launchAppFromWeb = () => {
-    window.location = process.env.APP_DOMAIN
-  }
-
   signIn = async () => {
     try {
       const resp = await CognitoPlugin.getSession()
-      this.setState({ status: `Got token! ${resp.accessToken}` })
+      this.setState({status: `Got token! ${resp.accessToken}`})
     } catch (err) {
       this.setState({
         status: err.message
@@ -52,7 +49,7 @@ class App extends Component {
 
   isSignedIn = async () => {
     try {
-      const { isSignedIn } = await CognitoPlugin.isSignedIn()
+      const {isSignedIn} = await CognitoPlugin.isSignedIn()
       this.setState({
         status: `Is signed in? ${isSignedIn}`
       })
@@ -63,7 +60,7 @@ class App extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <div>
         <p>A test of Cognito and other vital components</p>
@@ -77,4 +74,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App/>, document.getElementById('root'))
