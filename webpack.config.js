@@ -1,12 +1,12 @@
 /**
- * Chris Weed (chris@workgrid.com)
- * Copyright 2019 Workgrid Software LLC
+ * Chris Weed (chris@cjweed.com)
  */
 require('dotenv').config()
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
+const CircularDependencyPlugin = require('circular-dependency-plugin')
 
 module.exports = {
   mode: 'development',
@@ -45,6 +45,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new CircularDependencyPlugin({
+      // `onDetected` is called for each module that is cyclical
+      onDetected({ webpackModuleRecord, paths, compilation }) {
+        console.log('circular dependencies', paths)
+      },
+      // set the current working directory for displaying module paths
+      cwd: process.cwd()
+    }),
     new HtmlWebpackPlugin({ template: path.resolve('./public/index.html') }),
     // process.env.NODE_ENV !== 'development' &&
     //   new BundleAnalyzerPlugin({

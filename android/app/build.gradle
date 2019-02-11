@@ -42,7 +42,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.android.support:support-v4:27.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.11.1'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoauth:2.12.+@aar'
 }
 
 apply from: 'capacitor.build.gradle'
